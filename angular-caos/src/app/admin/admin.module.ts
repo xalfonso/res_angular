@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { InsertUserComponent } from './insert-user/insert-user.component';
-import { ListUserComponent } from './list-user/list-user.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {InsertUserComponent} from './insert-user/insert-user.component';
+import {ListUserComponent} from './list-user/list-user.component';
 
 @NgModule({
   imports: [
@@ -10,4 +10,5 @@ import { ListUserComponent } from './list-user/list-user.component';
   declarations: [InsertUserComponent, ListUserComponent],
   exports: [InsertUserComponent, ListUserComponent],
 })
-export class AdminModule { }
+export class AdminModule {
+}
