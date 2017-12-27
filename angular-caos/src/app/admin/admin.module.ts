@@ -7,6 +7,7 @@ import { ListUserComponent } from './list-user/list-user.component';
   imports: [
     CommonModule
   ],
-  declarations: [InsertUserComponent, ListUserComponent]
+  declarations: [InsertUserComponent, ListUserComponent],
+  exports: [InsertUserComponent, ListUserComponent],
 })
 export class AdminModule { }
