@@ -1,6 +1,26 @@
-<h2>Mostrando la navegación:</h2>
-<a routerLink="/insertUser">Insertar Usuario</a>
-<a routerLink="/listUser">Listar Usuario</a>
-<a routerLink="/insertArticle">Insertar Artículo</a>
-<router-outlet></router-outlet>
+<p-growl></p-growl>
+<div class="ui-g">
+  <div class="ui-g-12">Header Page</div>
+</div>
+<div class="ui-g">
+  <div class="ui-g-2">
+    Main Menu
+    <ul>
+      <li><a routerLink="/insertUser">Insertar Usuario</a></li>
+      <li><a routerLink="/listUser">Listar Usuario</a></li>
+      <li><a routerLink="/insertArticle">Insertar Artículo</a></li>
+    </ul>
+  </div>
+  <div class="ui-g-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div class="ui-g">
+  <div class="ui-g-12">Footer</div>
+</div>
+<button pButton type="button" (click)="addMessageSuccess()" label="Add Success Message growl" class="ui-button-success"></button>
+<button pButton type="button" (click)="addMessageInfo()" label="Add Info Message growl" class="ui-button-info"></button>
+<button pButton type="button" (click)="addMessageWarning()" label="Add Warning Message growl" class="ui-button-warning"></button>
+<button pButton type="button" (click)="addMessageError()" label="Add Error Message growl" class="ui-button-danger"></button>
+<button pButton type="button" (click)="clearMessages()" label="Clear Messages growl"></button>
 

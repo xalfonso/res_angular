@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+div.ui-g div[class^='ui-g-']{
+ /* border: antiquewhite 1px solid;*/
+}
+
+.formSystem input{
+  width: 100%;
+}
+
+.formSystem label{
+  display: block;
+}
