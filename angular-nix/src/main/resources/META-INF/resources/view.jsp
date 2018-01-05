@@ -7,5 +7,5 @@
 </aui:script>
 
 <app>
-	 Loading application... 
+	 Cargando ...
 </app>

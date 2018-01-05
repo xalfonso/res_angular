@@ -4,71 +4,71 @@ var webpackMerge = require('webpack-merge');
 
 // Webpack Config
 var webpackConfig = {
-  entry: {
-    'main': './src/main/resources/META-INF/resources/main.browser.ts',
-  },
+    entry: {
+        'main': './src/main/resources/META-INF/resources/main.browser.ts',
+    },
 
-  output: {
-    publicPath: '',
-    path: path.resolve(__dirname, './build/resources/main/META-INF/resources/')
-  },
+    output: {
+        publicPath: '',
+        path: path.resolve(__dirname, './build/resources/main/META-INF/resources/')
+    },
 
-  plugins: [
-    new webpack.ContextReplacementPlugin(
-      // The (\\|\/) piece accounts for path separators in *nix and Windows
-      /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
-      path.resolve(__dirname, './src'),
-      {
-        // your Angular Async Route paths relative to this root directory
-      }
-    ),
-  ],
+    plugins: [
+        new webpack.ContextReplacementPlugin(
+            // The (\\|\/) piece accounts for path separators in *nix and Windows
+            /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
+            path.resolve(__dirname, './src'),
+            {
+                // your Angular Async Route paths relative to this root directory
+            }
+        ),
+    ],
 
-  module: {
-    loaders: [
-      // .ts files for TypeScript
-      {
-        test: /\.ts$/,
+    module: {
         loaders: [
-          'awesome-typescript-loader',
-          'angular2-template-loader',
-          'angular2-router-loader'
+            // .ts files for TypeScript
+            {
+                test: /\.ts$/,
+                loaders: [
+                    'awesome-typescript-loader',
+                    'angular2-template-loader',
+                    'angular2-router-loader'
+                ]
+            },
+            {test: /\.css$/, loaders: ['style-loader', 'css-loader'], exclude: [/node_modules/]},
+            {test: /\.css$/, loaders: ['style-loader', 'css-loader'], include: [/node_modules/]},
+            {test: /\.html$/, loader: 'raw-loader'}
         ]
-      },
-      { test: /\.css$/, loaders: ['to-string-loader', 'css-loader'] },
-      { test: /\.html$/, loader: 'raw-loader' }
-    ]
-  }
+    }
 
 };
 
-
 // Our Webpack Defaults
 var defaultConfig = {
-  devtool: 'source-map',
+    devtool: 'source-map',
 
-  output: {
-    filename: '[name].bundle.js',
-    sourceMapFilename: '[name].map',
-    chunkFilename: '[id].chunk.js'
-  },
+    output: {
+        filename: '[name].bundle.js',
+        sourceMapFilename: '[name].map',
+        chunkFilename: '[id].chunk.js'
+    },
 
-  resolve: {
-    extensions: [ '.ts', '.js'],
-    modules: [ path.resolve(__dirname, 'node_modules') ]
-  },
+    resolve: {
+        extensions: ['.ts', '.js'],
+        modules: [path.resolve(__dirname, 'node_modules')]
+    },
 
- 
-  node: {
-    global: true,
-    crypto: 'empty',
-    __dirname: true,
-    __filename: true,
-    process: true,
-    Buffer: false,
-    clearImmediate: false,
-    setImmediate: false
-  }
+
+    node: {
+        global: true,
+        crypto: 'empty',
+        __dirname: true,
+        __filename: true,
+        process: true,
+        Buffer: false,
+        clearImmediate: false,
+        setImmediate: false
+    }
 };
 
 
