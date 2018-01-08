@@ -1,4 +1,10 @@
+<p-growl></p-growl>
 SIIIIIIIIIII
+<button pButton type="button" (click)="addMessageSuccess()" label="Add Success Message growl" class="ui-button-success"></button>
+<button pButton type="button" (click)="addMessageInfo()" label="Add Info Message growl" class="ui-button-info"></button>
+<button pButton type="button" (click)="addMessageWarning()" label="Add Warning Message growl" class="ui-button-warning"></button>
+<button pButton type="button" (click)="addMessageError()" label="Add Error Message growl" class="ui-button-danger"></button>
+<button pButton type="button" (click)="clearMessages()" label="Clear Messages growl"></button>
 <h2>Contact Reactive Form</h2>
 
 <form (ngSubmit)="submitForm()" [formGroup]="contactForm" novalidate>

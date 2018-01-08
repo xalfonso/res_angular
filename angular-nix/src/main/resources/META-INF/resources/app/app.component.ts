@@ -1,15 +1,13 @@
-import {Component} from '@angular/core';
-import {ViewEncapsulation} from "@angular/compiler/src/core";
+import {ViewEncapsulation, Component} from '@angular/core';
+import '../../../../../../node_modules/font-awesome/css/font-awesome.min.css';
+import '../../../../../../node_modules/primeng/resources/themes/omega/theme.css';
+import '../../../../../../node_modules/primeng/resources/primeng.min.css'
 
 @Component({
     selector: 'app',
     encapsulation: ViewEncapsulation.None,
     templateUrl: './app.component.html',
-    styleUrls: [
-        '../../../../../../node_modules/font-awesome/css/font-awesome.min.css',
-        '../../../../../../node_modules/primeng/resources/themes/omega/theme.css',
-        '../../../../../../node_modules/primeng/resources/primeng.min.css'
-    ],
+    styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
 }

@@ -25,7 +25,7 @@ import com.liferay.portal.kernel.portlet.LiferayPortlet;
 	},
 	service = Portlet.class
 )
-public class Angular2SeedLiferayPortlet extends GenericPortlet {
+public class Angular5SeedLiferayPortlet extends GenericPortlet {
 
 	@Override
 	protected void doView(

@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var webpackMerge = require('webpack-merge');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // Webpack Config
 var webpackConfig = {
@@ -22,10 +23,11 @@ var webpackConfig = {
                 // your Angular Async Route paths relative to this root directory
             }
         ),
+        new ExtractTextPlugin('[name].css'),
     ],
 
     module: {
-        loaders: [
+        rules: [
             // .ts files for TypeScript
             {
                 test: /\.ts$/,
@@ -35,10 +37,24 @@ var webpackConfig = {
                     'angular2-router-loader'
                 ]
             },
-            {test: /\.css$/, loaders: ['style-loader', 'css-loader'], exclude: [/node_modules/]},
-            {test: /\.css$/, loaders: ['style-loader', 'css-loader'], include: [/node_modules/]},
+            {
+                test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+                loader: 'file-loader?name=assets/[name].[hash].[ext]',
+
+            },
+            {
+                test: /\.css$/,
+                exclude: path.resolve(__dirname, './src'),
+                loader: ExtractTextPlugin.extract({fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap'})
+            },
+            {
+                test: /\.css$/,
+                include: path.resolve(__dirname, './src'),
+                loader: 'raw-loader'
+            },
             {test: /\.html$/, loader: 'raw-loader'}
-        ]
+        ],
+        exprContextCritical: false
     }
 
 };
