@@ -1,0 +1,6 @@
+*.class
+*/target/*
+angular-caos/.idea/*
+angular-erbo/.idea/*
+angular-nix/.idea/*
+*.iml

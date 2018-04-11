@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+Probando llamada a metodo Ajax desde Angular 5
+
+<button (click)="loadStudentList()">Load Student</button>
+
+<table class="tableTest">
+  <tr *ngIf="listStudent">
+    <td>Nombre</td>
+    <td>Apellidos</td>
+    <td>Sexo</td>
+    <td>Intereses</td>
+  </tr>
+  <tr *ngFor="let student of listStudent; ">
+    <td>
+      {{student.name}}
+    </td>
+    <td>
+      {{student.surname}}
+    </td>
+    <td>
+      {{student.sex}}
+    </td>
+    <td>
+      {{student.interestString}}
+    </td>
+  </tr>
+</table>
