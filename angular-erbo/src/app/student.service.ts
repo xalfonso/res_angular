@@ -10,6 +10,6 @@ export class StudentService {
   }
 
   getAllStudent(): Observable<Student[]> {
-    return this.http.get<Student[]>('http://localhost:8080/spring-hisperon-1.0-SNAPSHOT/student/json');
+    return this.http.get<Student[]>('http://localhost:8080/springmvc/student/json');
   }
 }
