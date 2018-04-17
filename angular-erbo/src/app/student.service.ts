@@ -10,6 +10,6 @@ export class StudentService {
   }
 
   getAllStudent(): Observable<Student[]> {
-    return this.http.get<Student[]>('http://localhost:8080/springmvc/student/json');
+    return this.http.get<Student[]>('https://aplpre.favorita.ec/springmvc/student/json');
   }
 }
